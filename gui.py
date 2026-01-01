@@ -107,7 +107,7 @@ class NetworkRepairGUI:
         
         subtitle_label = ctk.CTkLabel(
             header_frame, 
-            text="Automatically repair local network connection issues", 
+            text="Automatically repair Windows network connection issues", 
             font=ctk.CTkFont(family="Microsoft YaHei UI", size=15),
             text_color=self.colors['text_secondary']
         )
