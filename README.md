@@ -6,7 +6,7 @@ A network repair tool developed based on Python and CustomTkinter that can autom
 
 ## Features
 
-- 📡 **Automatic Adapter Detection**: Supports both Ethernet and Wireless Local Area Network (WLAN) adapters
+- 📡 **Automatic Adapter Detection**: Supports both Ethernet and WLAN adapters
 - 🔧 **One-Click Repair**: Automatically executes the complete network repair process
 - 📊 **Real-time Progress Display**: Clearly shows repair steps and progress
 - 📋 **Detailed Logs**: Records the complete repair process and results
