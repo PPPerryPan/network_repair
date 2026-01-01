@@ -15,7 +15,7 @@ from network_utils import (
     set_dns_to_dhcp,
     refresh_network_config,
     display_network_info,
-    upload_usage
+    # upload_usage
 )
 
 
@@ -212,6 +212,7 @@ class NetworkRepairGUI:
     def start_repair_automatically(self):
         """自动开始修复网络"""
         self.is_repairing = True
+        self.log_message("https://github.com/PPPerryPan/network_repair")
         self.log_message("正在检查管理员权限...")
         
         if not is_admin():

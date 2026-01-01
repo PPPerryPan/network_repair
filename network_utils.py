@@ -4,7 +4,7 @@ import time
 import wmi
 import pythoncom
 import requests
-from constants import USAGE_API_URL, USAGE_SOFTWARE_NAME
+# from constants import USAGE_API_URL, USAGE_SOFTWARE_NAME
 
 
 def get_startupinfo():
@@ -271,19 +271,19 @@ def display_network_info(log_callback=None):
         log_callback("————————————")
 
 
-def upload_usage(log_callback=None):
-    """
-    上传使用统计
+# def upload_usage(log_callback=None):
+#     """
+#     上传使用统计
     
-    Args:
-        log_callback: 日志回调函数
-    """
-    try:
-        data = {'software': USAGE_SOFTWARE_NAME}
-        response = requests.post(USAGE_API_URL, json=data)
-        if log_callback:
-            log_callback(f"内网测试结果: {response.status_code}")
-    except Exception as e:
-        if log_callback:
-            log_callback(f"上传使用统计失败: {str(e)}")
+#     Args:
+#         log_callback: 日志回调函数
+#     """
+#     try:
+#         data = {'software': USAGE_SOFTWARE_NAME}
+#         response = requests.post(USAGE_API_URL, json=data)
+#         if log_callback:
+#             log_callback(f"内网测试结果: {response.status_code}")
+#     except Exception as e:
+#         if log_callback:
+#             log_callback(f"上传使用统计失败: {str(e)}")
 
