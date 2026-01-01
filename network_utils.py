@@ -46,14 +46,17 @@ def get_ethernet_adapters(log_callback=None):
         
         for line in output.split('\n'):
             line = line.strip()
-            if line.startswith('以太网适配器'):
-                adapter_name = line.replace('以太网适配器', '').replace(':', '').strip()
+            if line.startswith('以太网适配器') or line.startswith('无线局域网适配器'):
+                if line.startswith('以太网适配器'):
+                    adapter_name = line.replace('以太网适配器', '').replace(':', '').strip()
+                else:
+                    adapter_name = line.replace('无线局域网适配器', '').replace(':', '').strip()
                 current_adapter = adapter_name
                 adapter_info[current_adapter] = {'name': adapter_name}
             elif current_adapter and line.startswith('描述'):
                 description = line.split(':', 1)[1].strip()
                 adapter_info[current_adapter]['description'] = description
-                if any(x in current_adapter for x in ['以太网', 'Eth', 'eth']):
+                if any(x in current_adapter for x in ['以太网', 'Eth', 'eth', 'WLAN', 'wlan']):
                     adapters.append(adapter_info[current_adapter])
         
         for adapter in adapters:
